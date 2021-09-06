@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Palapa</title>
+
+    <style type="text/css">
+    .container{
+        display: flexbox;
+        align-content: center;
+        margin: 5%;
+    }
+    </style>
+
+</head>
+<body>
+    
+<!-- http://www.image-map.net/ https://github.com/davidjbradshaw/image-map-resizer -->
+    <div class="container">
+        <div id="show">Palapa seleccionada:</div>    
+    
+        <p>
+            <img name="mapa" src="./assets/images/fondito.jpeg" usemap="#image-map" border="0" width="100%">
+        </p>
+        <map name="image-map">
+            <area target="" alt="P1" title="P1" href="#" coords="234,213,60" shape="circle">
+            <area target="" alt="P2" title="P2" href="#" coords="379,204,55" shape="circle">
+            <area target="" alt="P3" title="P3" href="#" coords="528,207,50" shape="circle">
+            <area target="" alt="P4" title="P4" href="#" coords="667,204,60" shape="circle">
+            <area target="" alt="P5" title="P5" href="#" coords="240,376,59" shape="circle">
+            <area target="" alt="P6" title="P6" href="#" coords="382,372,62" shape="circle">
+            <area target="" alt="P7" title="P7" href="#" coords="524,371,63" shape="circle">
+            <area target="" alt="P8" title="P8" href="#" coords="665,369,66" shape="circle">
+            <area target="" alt="P9" title="P9" href="#" coords="248,534,62" shape="circle">
+            <area target="" alt="P10" title="P10" href="#" coords="381,527,59" shape="circle">
+            <area target="" alt="P11" title="P11" href="#" coords="515,527,61" shape="circle">
+            <area target="" alt="P12" title="P12" href="#" coords="652,525,60" shape="circle">
+            <area target="" alt="P13" title="P13" href="#" coords="281,699,61" shape="circle">
+            <area target="" alt="P14" title="P14" href="#" coords="449,693,66" shape="circle">
+            <area target="" alt="P15" title="P15" href="#" coords="622,693,71" shape="circle">
+            <area target="" alt="P16" title="P16" href="#" coords="292,861,67" shape="circle">
+            <area target="" alt="P17" title="P17" href="#" coords="434,860,64" shape="circle">
+            <area target="" alt="P18" title="P18" href="#" coords="572,865,67" shape="circle">
+            <area target="" alt="P19" title="P19" href="#" coords="310,981,53" shape="circle">
+        </map>
+    </div>
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./assets/js/imageMapResizer.min.js"></script>
+    <script type="text/javascript">
+		$('map').imageMapResize();
+
+        var myImage = document.getElementsByTagName("area");
+        var text = document.getElementById("show");
+
+        for (var i = 0; i < myImage.length; i++) {
+            myImage[i].addEventListener('click',show);
+        }
+
+        function show(){
+            var myAlt = this.alt;
+            text.innerHTML = "Palapa seleccionada:" + myAlt;
+        }
+	</script>
+
+</body>
+</html>
